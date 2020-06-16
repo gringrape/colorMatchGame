@@ -1,6 +1,6 @@
 const utils = {
-  random: () => {
-    return Math.floor(Math.random() * this.count);
+  random: (max) => {
+    return Math.floor(Math.random() * max);
   }
 }
 
