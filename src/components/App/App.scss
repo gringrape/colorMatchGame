@@ -58,7 +58,6 @@
       width: 100%;
       height: 100%;
       background-color: rgba($color:darkgray, $alpha: .7);
-      visibility: hidden;
     }
 
     &__answer {
@@ -67,16 +66,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -70%);
-
-      &--right {
-        width: 30%;
-        visibility: hidden;
-      }
-
-      &--wrong {
-        width: 30%;
-        visibility: hidden;
-      }
+      width: 30%;
     }
   }
 }
