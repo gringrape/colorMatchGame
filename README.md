@@ -1,68 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Color match game
+## 1. 요구사항
+- 두개의 단어 - 위, 아래
+- 위 단어의 의미와 아래 단어의 색깔 비교
+- 일치시 정답, 불일치시 오답
 
-## Available Scripts
+## 2. 사용자 스토리
+- 사용자는 게임의 룰을 알기 위해 게임에 대한 설명을 확인할 수 있다.
+- 사용자는 정답을 고를 수 있다.
+- 사용자는 자신이 고른 답이 정답인지 확인 할 수 있다.
 
-In the project directory, you can run:
+## 3. 컴포넌트 설계
+### App
+- 최상위 컴포넌트.
+- 글로벌 css 를 import 하는 역할
+### ColorMatch
+- 하나의 플레이가 끝난 후 게임의 상태를 업데이트 하는 역할
+- key 를 변경하여 component re-rendering 
+### Game
+- 게임의 상태와 UI 를 총괄하는 컴포넌트
 
-### `yarn start`
+## 4. Game 컴포넌트의 상세로직
+### UI logic
+1. 글자 및 색 표시 - DisplayWord 컴포넌트에 글자, 색깔을 parameter 로 주어서 표시
+2. 정답 및 오답 체크 - Screen 컴포넌트를 이용하여 정답을 체크한 경우에만 보이도록 함.
+### State logic
+1. upperword_word, lowerword_color,  lowerword_word, gamestatus 네가지의 상태관리
+2. 초기값은 0~6 사이의 랜덤값이 지정되도록 함
+3. 사용자가 버튼 클릭시, upperword_word 와 lowerword_color 를 비교하여 gamestatus 를 변화
+4. gamestatus 에 따라서 Screen 컴포넌트를 변화 -> 정답 및 오답 체크
+5. 사용자가 버튼 클릭시, 게임 업데이트
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## 5. 향후 개선 방향
+- 정답과 오답에 확률이 균등하게 분포되도록 utils 를 수정
