@@ -1,0 +1,53 @@
+.game {
+  padding: 4rem;
+  width: 55rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  text-align: center;
+
+  &-title {
+    font-family: 'Hi Melody', cursive;
+    font-size: 6rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    margin-bottom: .5rem;
+    
+  }
+
+  &-description {
+    color: darken(lightgray, 30%);
+  }
+
+  &-box {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    width: 100%;
+    height: auto;
+    background-color: lighten(gray, 30%);
+    border: 2px solid darkgray;
+
+    &__word {
+      font-size: 4rem;
+      letter-spacing: .6rem;
+      font-weight: 600;
+      margin: 2rem 0;
+    }
+
+    &__btn {
+      margin: 3rem 15% 1rem 15%;
+      border-style: solid;
+      border-radius: 2px;
+      padding: .5rem 2rem;
+      font-size: 1.6rem;    
+      font-weight: 400;
+      outline: none;
+      transition: .2s ease;
+      
+      &:hover {
+        transform: translateY(-.2rem);
+      }
+    }    
+  }
+}
